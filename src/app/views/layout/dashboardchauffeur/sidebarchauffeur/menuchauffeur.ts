@@ -1,25 +1,11 @@
 import { MenuChauffeurItem } from './menuchauffeurmodel';
 
 export const MENU: MenuChauffeurItem[] = [
-  {
-    label: 'Main',
-    isTitle: true
-  },
-  {
-    label: 'Home',
-    icon: 'home',
-    link: '/chauffeur'
-  },
+ 
   {
     label: 'Mes Mission',
     icon: 'airplay',
     link: '/chauffeur/mesmission'
-  },
-
-  {
-    label: 'Mes Clients',
-    icon: 'users',
-    link: '/chauffeur/mesclient'
   },
 
   {

@@ -1,7 +1,7 @@
 <nav class="page-breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink=".">Admin</a></li>
-    <li class="breadcrumb-item active" aria-current="page">List Demandes</li>
+    <li class="breadcrumb-item active" aria-current="page">Liste Demandes</li>
 
   </ol>
 </nav>
@@ -13,7 +13,7 @@
           <!-- Button trigger modal -->
 
           <!-- Modal -->
-        <h6 class="card-title">List Demandes</h6>
+        <h6 class="card-title">Liste Demandes</h6>
 
         <div class="table-responsive">
 
@@ -22,11 +22,10 @@
             <thead>
               <tr>
                 <th>Id</th>
-                <th>Name</th>
-                <th>UserName</th>
-                <th>Email</th>
-                <th>Adress</th>
-                <th>Action</th>
+                <th>longitude</th>
+                <th>altitude</th>
+                <th>telephone</th>
+                <th>Etat</th>
               </tr>
             </thead>
             <tbody *ngFor="let user of users ">  <!--<tbody let camion of comions>-->

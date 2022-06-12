@@ -1,7 +1,7 @@
 <nav class="page-breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a routerLink=".">Admin</a></li>
-    <li class="breadcrumb-item active" aria-current="page">List Chauffeurs</li>
+    <li class="breadcrumb-item active" aria-current="page">Liste Chauffeurs</li>
 
   </ol>
 </nav>
@@ -13,7 +13,7 @@
           <!-- Button trigger modal -->
 
           <!-- Modal -->
-        <h6 class="card-title">List Chauffeurs  <button id="ajout" class="btn btn-primary" (click)="openScrollableModal(scrollableModal)"><i data-feather="truck"></i>&nbsp;Ajouter Chauffeur</button></h6>
+        <h6 class="card-title">Liste Chauffeurs </h6>
 
         <div class="table-responsive">
 
@@ -21,11 +21,10 @@
           <table id="dataTableExample" class="table">
             <thead>
               <tr>
-                <th>Id</th>
-                <th>Name</th>
-                <th>UserName</th>
-                <th>Email</th>
-                <th>Adress</th>
+                <th>Nom</th>
+                <th>Prenom</th>
+                <th>Telephone</th>
+                <th>Etat</th>
                 <th>Action</th>
               </tr>
             </thead>

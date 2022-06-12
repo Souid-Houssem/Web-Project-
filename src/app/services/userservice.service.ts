@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import {  Observable, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { User } from '../model/user';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 
@@ -18,7 +18,12 @@ id:any;
   constructor(private httpClient: HttpClient) { }
 
  getAll(){
-    return this.httpClient.get(environment.apiUrl+'/users/'  );
+
+    let header = new HttpHeaders();
+    header.append('Content-Type','application/json');
+    header.append('Access-Control-Allow-Origin','*')
+    return this.httpClient.get(environment.apiUrl+'api/clients',{headers : header});
+
   }
  /*ajouteruser(){
     return this.httpClient.post(environment.apiUrl+'/ajout/'  );
