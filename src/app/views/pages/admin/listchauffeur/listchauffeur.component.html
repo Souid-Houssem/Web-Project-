@@ -33,9 +33,9 @@
               <tr>
               <td>{{chauffeur.id}}</td>
               <td>{{chauffeur.nom}}</td>
-              <td>{{user.mail}}</td>
-              <td>{{user.numeroTel}}</td>
-              <td>{{i % 2 = 0 ? "Actif" : "nom Actif"}}</td>
+              <td>{{chauffeur.mail}}</td>
+              <td>{{chauffeur.numeroTel}}</td>
+              <td>Actif</td>
               <td>
               <button type="button" class="btn btn-danger btn-icon"> <i data-feather="eye"></i> </button>&nbsp;
               <a routerLink="/admin/edit/{{chauffeur.id}}"  type="button" class="btn btn-warning btn-icon"> <i data-feather="edit"></i> </a>&nbsp;
