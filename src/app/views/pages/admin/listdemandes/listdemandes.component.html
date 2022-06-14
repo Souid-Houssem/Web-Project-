@@ -27,15 +27,15 @@
                 <th>telephone</th>
               </tr>
             </thead>
-            <tbody *ngFor="let demande of demandes ">  <!--<tbody let camion of comions>-->
+            <tbody *ngFor="let demande of demandes,let i = index">  <!--<tbody let camion of comions>-->
               <tr>
               <td>{{demande.id}}</td>
               <td>{{demande.longitude}}</td>
               <td>{{demande.latitude}}</td>
-              <td>55221547</td>
+              <td>5{{i}}22{{i}}54{{i}}</td>
               <td>
               <button type="button" class="btn btn-danger btn-icon"> <i data-feather="eye"></i> </button>&nbsp;
-              <a routerLink="/admin/edit/{{demade.id}}"  type="button" class="btn btn-warning btn-icon"> <i data-feather="edit"></i> </a>&nbsp;
+              <a routerLink="/admin/edit/{{demande.id}}"  type="button" class="btn btn-warning btn-icon"> <i data-feather="edit"></i> </a>&nbsp;
               <a routerLink="/admin/delete/{{demande.id}}}" type="button" class="btn btn-primary btn-icon"> <i data-feather="delete"></i></a>
               </td>
               </tr>
