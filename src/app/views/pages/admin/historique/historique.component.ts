@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTable } from "simple-datatables";
-import { User } from 'src/app/model/user';
-import { UserserviceService } from 'src/app/services/userservice.service';
+import { HistoriqueService } from 'src/app/services/historique.service';
 import { TemplateRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -229,14 +228,14 @@ export class ModalComponent {
   styleUrls: ['./historique.component.scss']
 })
 export class HistoriqueComponent implements OnInit {
-  users: any;
+  historiques: any;
   basicModalCode: any;
   scrollableModalCode: any;
   verticalCenteredModalCode: any;
   optionalSizesModalCode: any;
 
   basicModalCloseResult: string = '';
-  constructor(public userservice: UserserviceService, private modalService: NgbModal) { }
+  constructor(public historiqueservice : HistoriqueService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     const dataTable = new DataTable("#dataTableExample");
@@ -244,7 +243,7 @@ export class HistoriqueComponent implements OnInit {
     this.scrollableModalCode = scrollableModal;
     this.verticalCenteredModalCode = verticalCenteredModal;
     this.optionalSizesModalCode = optionalSizesModal;
-    this.getuser();
+    this.getHistoriques();
 
   }
 
@@ -256,10 +255,10 @@ export class HistoriqueComponent implements OnInit {
   });
 }*/
 
-getuser() {
-  this.userservice.getAll().subscribe(data => {
+getHistoriques() {
+  this.historiqueservice.getAll().subscribe(data => {
 
-   this.users = data;
+   this.historiques = data;
     console.log(data);
   });}
 

@@ -25,15 +25,15 @@
                 <th>Distance Parcourue</th>
                 <th>Prix</th>
                 <th>Date</th>
+                <th>Action</th>
               </tr>
             </thead>
-            <tbody *ngFor="let user of users ">  <!--<tbody let camion of comions>-->
+            <tbody *ngFor="let historique of historiques "> 
               <tr>
-              <td>{{user.id}}</td>
-              <td>{{user.name}}</td>
-              <td>{{user.username}}</td>
-              <td>{{user.email}}</td>
-              <td>{{user.address.city}}</td>
+              <td>{{historique.id}}</td>
+              <td>{{historique.kilometres}}</td>
+              <td>{{historique.prix}}</td>
+              <td>{{historique.date_remorquage}}</td>
               <td>
               <button type="button" class="btn btn-danger btn-icon"> <i data-feather="eye"></i> </button>&nbsp;
               <a  type="button" class="btn btn-warning btn-icon"> <i data-feather="edit"></i> </a>&nbsp;
