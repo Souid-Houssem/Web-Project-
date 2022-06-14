@@ -27,11 +27,12 @@
                 <th>Couleur</th>
               </tr>
             </thead>
-            <tbody *ngFor="let user of users ">  <!--<tbody let camion of comions>-->
+            <tbody *ngFor="let camion of camions">  <!--<tbody let camion of comions>-->
               <tr>
-              <td>{{user.id}}</td>
-              <td>{{user.name}}</td>
-              <td>{{user.username}}</td>
+              <td>{{camion.id}}</td>
+              <td>{{camion.modele}}</td>
+              <td>{{camion.matricule}}</td>
+              <td>{{camion.couleur}}</td>
          
               <td>
               <button type="button" class="btn btn-danger btn-icon"> <i data-feather="eye"></i> </button>&nbsp;
