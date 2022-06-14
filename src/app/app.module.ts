@@ -32,7 +32,7 @@ import { HistoriqueChauffeurComponent } from './views/pages/chauffeur/historique
 import { EditProfileComponent } from './views/pages/editprofile/editprofile.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditcamionComponent } from './views/pages/editcamion/editcamion.component';
 
 
@@ -71,7 +71,8 @@ import { EditcamionComponent } from './views/pages/editcamion/editcamion.compone
     LayoutModule,
     HttpClientModule,
     RouterModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
 
 
   ],

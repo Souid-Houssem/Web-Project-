@@ -17,6 +17,23 @@ data:any;
 id:any;
   constructor(private httpClient: HttpClient) { }
 
+  login(data: any){
+
+    let header = new HttpHeaders();
+    header.append('Content-Type','application/json');
+    header.append('Access-Control-Allow-Origin','*')
+    return this.httpClient.post(environment.apiUrl+'login',data);
+
+  }
+  registerUser(data: any){
+
+    let header = new HttpHeaders();
+    header.append('Content-Type','application/json');
+    header.append('Access-Control-Allow-Origin','*')
+    return this.httpClient.post(environment.apiUrl+'register',data);
+
+  }
+
  getAll(){
 
     let header = new HttpHeaders();
@@ -37,7 +54,7 @@ UpdateUser(id:any, data:any) {
  DeleteUser() {
     return this.httpClient.delete(environment.apiUrl+'/delete/' );
   }
-
+ 
 
 
 
