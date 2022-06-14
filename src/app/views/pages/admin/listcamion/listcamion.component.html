@@ -25,6 +25,7 @@
                 <th>Modele</th>
                 <th>Matricule</th>
                 <th>Couleur</th>
+                <th>Action</th>
               </tr>
             </thead>
             <tbody *ngFor="let camion of camions">  <!--<tbody let camion of comions>-->
@@ -36,8 +37,8 @@
          
               <td>
               <button type="button" class="btn btn-danger btn-icon"> <i data-feather="eye"></i> </button>&nbsp;
-              <a routerLink="/admin/editcamion/{{user.id}}"  type="button" class="btn btn-warning btn-icon"> <i data-feather="edit"></i> </a>&nbsp;
-              <a routerLink="/admin/delete/{{user.id}}}" type="button" class="btn btn-primary btn-icon"> <i data-feather="delete"></i></a>
+              <a routerLink="/admin/editcamion/{{camion.id}}"  type="button" class="btn btn-warning btn-icon"> <i data-feather="edit"></i> </a>&nbsp;
+              <a routerLink="/admin/delete/{{camion.id}}}" type="button" class="btn btn-primary btn-icon"> <i data-feather="delete"></i></a>
               </td>
               </tr>
 
