@@ -39,7 +39,8 @@ export class LoginComponent implements OnInit {
     if(this.form.invalid) {
       return;
     }
-
+    console.log(this.form.value);
+    
     this.dataService.login(this.form.value).subscribe(res => {
       this.data = res;
       if(this.data.status === 1 ) {
@@ -49,7 +50,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('user', this.user);
         console.log(this.user);
         this.router.navigate(['/login']);
-
+   
 
 
       } else if(this.data.status === 0){
