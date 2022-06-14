@@ -1,8 +1,7 @@
 import { Component, OnInit, TemplateRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
-import { User } from 'src/app/model/user';
-import { UserserviceService } from 'src/app/services/userservice.service';
+import { ChauffeurService } from 'src/app/services/chauffeur.service';
 
 const basicModal = {
   htmlCode:
@@ -231,14 +230,14 @@ import { DataTable } from "simple-datatables";
 export class ListchauffeurComponent implements OnInit {
 
 
-  users: any;
+  chauffeurs:any;
   basicModalCode: any;
   scrollableModalCode: any;
   verticalCenteredModalCode: any;
   optionalSizesModalCode: any;
 
   basicModalCloseResult: string = '';
-  constructor(public userservice: UserserviceService, private modalService: NgbModal) { }
+  constructor(public chauffeurservice: ChauffeurService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     const dataTable = new DataTable("#dataTableExample");
@@ -246,7 +245,7 @@ export class ListchauffeurComponent implements OnInit {
     this.scrollableModalCode = scrollableModal;
     this.verticalCenteredModalCode = verticalCenteredModal;
     this.optionalSizesModalCode = optionalSizesModal;
-    this.getuser();
+    this.getchauffeurs();
 
   }
 
@@ -258,10 +257,10 @@ export class ListchauffeurComponent implements OnInit {
   });
 }*/
 
-getuser() {
-  this.userservice.getAll().subscribe(data => {
+getchauffeurs() {
+  this.chauffeurs.getAll().subscribe((data: any) => {
 
-   this.users = data;
+   this.chauffeurs = data;
     console.log(data);
   });}
 
