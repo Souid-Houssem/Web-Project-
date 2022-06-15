@@ -49,7 +49,7 @@ export class GeoChauffuerComponent implements OnInit {
 
       let popup = L.popup()
         .setLatLng(this.latLong)
-        .setContent('this is your position')
+        .setContent('Votre position')
         .openOn(mapchauffuer);
     });
     this.watchPosition();

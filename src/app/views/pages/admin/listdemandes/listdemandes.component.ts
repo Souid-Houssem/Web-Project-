@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTable } from "simple-datatables";
-import { User } from 'src/app/model/user';
-import { UserserviceService } from 'src/app/services/userservice.service';
+import { DemandeService } from 'src/app/services/demande.service';
 import { TemplateRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -230,14 +229,14 @@ export class ModalComponent {
 })
 export class ListdemandesComponent implements OnInit {
 
-  users: any;
+  demandes: any;
   basicModalCode: any;
   scrollableModalCode: any;
   verticalCenteredModalCode: any;
   optionalSizesModalCode: any;
 
   basicModalCloseResult: string = '';
-  constructor(public userservice: UserserviceService, private modalService: NgbModal) { }
+  constructor(public demandeservice : DemandeService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     const dataTable = new DataTable("#dataTableExample");
@@ -245,7 +244,7 @@ export class ListdemandesComponent implements OnInit {
     this.scrollableModalCode = scrollableModal;
     this.verticalCenteredModalCode = verticalCenteredModal;
     this.optionalSizesModalCode = optionalSizesModal;
-    this.getuser();
+    this.getDemandes();
 
   }
 
@@ -257,10 +256,10 @@ export class ListdemandesComponent implements OnInit {
   });
 }*/
 
-getuser() {
-  this.userservice.getAll().subscribe(data => {
+getDemandes() {
+  this.demandeservice.getAll().subscribe(data => {
 
-   this.users = data;
+   this.demandes = data;
     console.log(data);
   });}
 

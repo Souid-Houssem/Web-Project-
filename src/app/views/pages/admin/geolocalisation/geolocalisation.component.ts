@@ -48,11 +48,15 @@ export class GeolocalisationComponent implements OnInit {
       let marker = L.marker(this.latLong,{icon: IconStyleOne}).addTo(mymap);
 
 
-      marker.bindPopup('<b>My Postion</b>').openPopup();
+      marker.bindPopup(`<center>
+      <p>
+         <strong>Demande</strong></p></center>
+   <a class="btn btn-primary" type="button" href="https://www.google.com/maps/@33.9183866,8.1224174,13z"></a>
+       `).openPopup();
 
       let popup = L.popup()
         .setLatLng(this.latLong)
-        .setContent('this is your position')
+        .setContent('Ma position')
         .openOn(mymap);
     });
     this.watchPosition();
