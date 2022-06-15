@@ -17,7 +17,6 @@ import { AdminComponent } from './views/pages/admin/admin.component';
 import { ClientComponent } from './views/pages/client/client.component';
 import { ChauffeurComponent } from './views/pages/chauffeur/chauffeur.component';
 import { ListclientComponent } from './views/pages/admin/listclient/listclient.component';
-import { HistoriqueComponent } from './views/pages/admin/historique/historique.component';
 import { ListvehiculeComponent } from './views/pages/admin/listvehicule/listvehicule.component';
 import { ListchauffeurComponent } from './views/pages/admin/listchauffeur/listchauffeur.component';
 import { ListdemandesComponent } from './views/pages/admin/listdemandes/listdemandes.component';
@@ -33,7 +32,7 @@ import { HistoriqueChauffeurComponent } from './views/pages/chauffeur/historique
 import { EditProfileComponent } from './views/pages/editprofile/editprofile.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Router, RouterModule } from '@angular/router';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { EditcamionComponent } from './views/pages/editcamion/editcamion.component';
 
 
@@ -62,8 +61,7 @@ import { EditcamionComponent } from './views/pages/editcamion/editcamion.compone
     MesmissionComponent,
     ListcamionComponent,
     EditProfileComponent,
-    EditcamionComponent,
-    HistoriqueComponent
+    EditcamionComponent
 
   ],
   imports: [
@@ -73,8 +71,7 @@ import { EditcamionComponent } from './views/pages/editcamion/editcamion.compone
     LayoutModule,
     HttpClientModule,
     RouterModule,
-    FormsModule,
-    ReactiveFormsModule,
+    FormsModule
 
 
   ],

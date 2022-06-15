@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
-import { UserserviceService } from 'src/app/services/userservice.service';
-
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,54 +7,22 @@ import { UserserviceService } from 'src/app/services/userservice.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  form:FormGroup;
-  submitted = false;
-  data:any;
-  token:any;
-  user:any;
-  constructor(private formBuilder: FormBuilder, private dataService: UserserviceService,
-    private router:Router) { }
 
-    loginForm(){
-      this.form = this.formBuilder.group({
-        email: ['', [Validators.required, Validators.email]],
-        password: ['', [Validators.required]]
-      })
-    }
+  returnUrl: any;
+
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.loginForm();
+    // get return url from route parameters or default to '/'
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
-  get f(){
-    return this.form.controls;
-  }
-
-  submit() {
-    this.submitted = true;
-
-    if(this.form.invalid) {
-      return;
+  onLoggedin(e: Event) {
+    e.preventDefault();
+    localStorage.setItem('isLoggedin', 'true');
+    if (localStorage.getItem('isLoggedin')) {
+      this.router.navigate([this.returnUrl]);
     }
-    console.log(this.form.value);
-    
-    this.dataService.login(this.form.value).subscribe(res => {
-      this.data = res;
-      if(this.data.status === 1 ) {
-        this.token = this.data.data.token;
-        this.user = this.data.user;
-        localStorage.setItem('token', this.token);
-        localStorage.setItem('user', this.user);
-        console.log(this.user);
-        this.router.navigate(['/login']);
-   
-
-
-      } else if(this.data.status === 0){
-
-
-      }
-    });
   }
 
 }

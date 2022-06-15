@@ -1,37 +1,40 @@
 import { MenuAdminItem } from './menuadminmodel';
 
 export const MENU: MenuAdminItem[] = [
-  
   {
-    label: 'Acceuil',
+    label: 'Main',
+    isTitle: true
+  },
+  {
+    label: 'Home',
     icon: 'home',
     link: '/admin'
   },
   {
-    label: 'Liste Clients',
+    label: 'List Clients',
     icon: 'users',
     link: '/admin/listclient'
   },
 
   {
-    label: 'Liste Vehicules',
+    label: 'List Vehicules',
     icon: 'clipboard',
     link: '/admin/listvehicule'
   },
 
   {
-    label: 'Liste Camions',
+    label: 'List Camions',
     icon: 'truck',
     link: '/admin/listcamion'
   },
   {
-    label: 'Liste Demandes',
+    label: 'List Demandes',
     icon: 'file-text',
     link: '/admin/listdemandes'
   },
 
   {
-    label: 'Liste Chauffuers',
+    label: 'List Chauffuers',
     icon: 'user',
     link: '/admin/listchauffeur'
   },

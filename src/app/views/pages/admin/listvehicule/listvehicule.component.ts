@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataTable } from "simple-datatables";
-import { VehiculeserviceService } from 'src/app/services/vehiculeservice.service';
+import { User } from 'src/app/model/user';
+import { UserserviceService } from 'src/app/services/userservice.service';
 import { TemplateRef } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -229,14 +230,14 @@ export class ModalComponent {
 })
 export class ListvehiculeComponent implements OnInit {
 
-  voitures: any;
+  users: any;
   basicModalCode: any;
   scrollableModalCode: any;
   verticalCenteredModalCode: any;
   optionalSizesModalCode: any;
 
   basicModalCloseResult: string = '';
-  constructor(public voitureservice: VehiculeserviceService, private modalService: NgbModal) { }
+  constructor(public userservice: UserserviceService, private modalService: NgbModal) { }
 
   ngOnInit(): void {
     const dataTable = new DataTable("#dataTableExample");
@@ -244,7 +245,7 @@ export class ListvehiculeComponent implements OnInit {
     this.scrollableModalCode = scrollableModal;
     this.verticalCenteredModalCode = verticalCenteredModal;
     this.optionalSizesModalCode = optionalSizesModal;
-    this.getVoitures();
+    this.getuser();
 
   }
 
@@ -256,10 +257,10 @@ export class ListvehiculeComponent implements OnInit {
   });
 }*/
 
-getVoitures() {
-  this.voitureservice.getAll().subscribe(data => {
+getuser() {
+  this.userservice.getAll().subscribe(data => {
 
-   this.voitures = data;
+   this.users = data;
     console.log(data);
   });}
 
