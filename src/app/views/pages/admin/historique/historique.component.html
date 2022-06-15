@@ -28,12 +28,13 @@
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody *ngFor="let historique of historiques"> 
+            <tbody *ngFor="let hist of historiques ">  <!--<tbody let camion of comions>-->
               <tr>
-              <td>{{historique.id}}</td>
-              <td>{{historique.kilometres}}</td>
-              <td>{{historique.prix}}</td>
-              <td>{{historique.date_remorquage}}</td>
+              <td>{{hist.id}}</td>
+              <td>{{hist.kilometres}}</td>
+              <td>{{hist.prix}}</td>
+              <td>{{hist.date_remorquage}}</td>
+         
               <td>
               <button type="button" class="btn btn-danger btn-icon"> <i data-feather="eye"></i> </button>&nbsp;
               <a  type="button" class="btn btn-warning btn-icon"> <i data-feather="edit"></i> </a>&nbsp;

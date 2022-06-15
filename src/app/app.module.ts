@@ -17,6 +17,7 @@ import { AdminComponent } from './views/pages/admin/admin.component';
 import { ClientComponent } from './views/pages/client/client.component';
 import { ChauffeurComponent } from './views/pages/chauffeur/chauffeur.component';
 import { ListclientComponent } from './views/pages/admin/listclient/listclient.component';
+import { HistoriqueComponent } from './views/pages/admin/historique/historique.component';
 import { ListvehiculeComponent } from './views/pages/admin/listvehicule/listvehicule.component';
 import { ListchauffeurComponent } from './views/pages/admin/listchauffeur/listchauffeur.component';
 import { ListdemandesComponent } from './views/pages/admin/listdemandes/listdemandes.component';
@@ -61,7 +62,8 @@ import { EditcamionComponent } from './views/pages/editcamion/editcamion.compone
     MesmissionComponent,
     ListcamionComponent,
     EditProfileComponent,
-    EditcamionComponent
+    EditcamionComponent,
+    HistoriqueComponent
 
   ],
   imports: [
